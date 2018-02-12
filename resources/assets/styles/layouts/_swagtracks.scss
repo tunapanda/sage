@@ -1,0 +1,83 @@
+/**
+  *  Index of swagtracks
+  **/
+
+.template-swagtracks {
+  .main {
+    display: flex;
+  }
+
+  article.swagtrack {
+    flex: 1 1 33%;
+    max-width: 33%;
+    background: $swagtrack-default-bg;
+    min-height: 160px;
+    padding: 1em;
+    margin: 1em;
+
+    .entry-title a {
+      color: $swagtrack-default-title-color;
+    }
+
+    .entry-summary {
+      color: #f6faef;
+    }
+  }
+}
+
+/**
+  *  Signle Swagtrack page (taxonomy archive)
+  **/
+
+.archive.tax-swagtrack {
+  .page-header {
+    background-color: #e4dedd;
+    color: #1c4255;
+    min-height: 200px;
+
+    h1 {
+      padding: 1em;
+    }
+  }
+
+  .swagpath {
+    display: flex;
+    background-color: #e6e6e6;
+    color: #1c4255;
+    margin: 1em 0;
+  }
+
+  .swagpath-status {
+    flex: 0 0 50px;
+    background-color: #d9e021;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .swagpath-info,
+  .swagpath-swagifacts {
+    flex: 1 1 45%;
+  }
+
+  .swagpath-info {
+    margin: 1em;
+  }
+
+  .swagpath-swagifacts {
+    background-color: #f2f2f2;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        background-color: #c9db7c;
+        padding: 0.5em 1em;
+        margin: 1em;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+    }
+  }
+}

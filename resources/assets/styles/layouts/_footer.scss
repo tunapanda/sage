@@ -1,0 +1,21 @@
+
+.content-info .row {
+  border-top: 1px solid #dfdfdf;
+  padding-top: 2em;
+}
+
+.nav-footer,
+.tunapanda-credit {
+  @include make-col(6);
+}
+
+.tunapanda-credit img {
+  max-width: 150px;
+  float: right;
+}
+
+.nav-footer {
+  li a {
+    color: #808080;
+  }
+}

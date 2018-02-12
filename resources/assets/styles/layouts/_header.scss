@@ -1,7 +1,50 @@
-.banner .nav li {
-  @extend .nav-item;
+.banner {
+  padding-top: 2em;
+
+  .row {
+    padding: 2em 0;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+  }
 }
 
-.banner .nav a {
-  @extend .nav-link;
+.header-logo {
+  @include make-col(6);
+
+  img {
+    max-width: 200px;
+  }
+}
+
+.nav-primary {
+  @include make-col(6);
+}
+
+.nav-primary .nav {
+  display: flex;
+
+  li {
+    flex: 1 0 50%;
+
+    a {
+      color: #808080;
+    }
+
+    &.current_page_item a {
+      color: #444;
+    }
+  }
+}
+
+.breadcrumbs {
+  margin: 1em 0;
+
+  a {
+    padding: 1em;
+    color: #999;
+  }
+
+  a:last-child {
+    color: #1c4255;
+  }
 }

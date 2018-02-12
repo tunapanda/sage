@@ -1,15 +1,15 @@
 {
-  "name": "sage",
-  "version": "9.0.0",
-  "author": "Roots <team@roots.io>",
-  "homepage": "https://roots.io/sage/",
+  "name": "wp-swag-theme",
+  "version": "0.0.0",
+  "author": "Tunapanda <jake@tunapanda.org>",
+  "homepage": "http://tunapanda.org",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/roots/sage.git"
+    "url": "git://github.com/tunapanda/wp-swag-theme.git"
   },
   "bugs": {
-    "url": "https://github.com/roots/sage/issues"
+    "url": "https://github.com/tunapanda/wp-swag-theme/sage/issues"
   },
   "licenses": [
     {
@@ -103,6 +103,8 @@
     "yargs": "~11.0.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.3",
+    "@fortawesome/fontawesome-free-solid": "^5.0.6",
     "bootstrap": "v4.0.0",
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9"

@@ -3,6 +3,8 @@ import 'jquery';
 
 // Import everything from autoload
 import "./autoload/**/*"
+import fontawesome from "@fortawesome/fontawesome";
+import solid from '@fortawesome/fontawesome-free-solid';
 
 // import local dependencies
 import Router from './util/Router';
@@ -22,3 +24,8 @@ const routes = new Router({
 
 // Load Events
 jQuery(document).ready(() => routes.loadEvents());
+
+// Render Icons
+fontawesome.library.add(solid);
+
+fontawesome.dom.i2svg();

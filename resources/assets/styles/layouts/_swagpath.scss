@@ -1,0 +1,60 @@
+/**
+  *  Signle Swagpath page
+  **/
+
+.single-swagpath {
+  .swagpath {
+    // background-color: #e6e6e6;
+  }
+
+  .entry-header {
+    border-bottom: 1px solid #dadada;
+    color: #5c5c5c;
+    padding: 1em;
+
+    h1 {
+      font-weight: 600;
+      font-size: 2em;
+    }
+  }
+
+  .swagpath-content {
+    display: flex;
+    padding: 1em;
+
+    .swagifacts {
+      flex: 1 1 25%;
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          border-bottom: 1px solid #dadada;
+          padding: 2em 1em;
+
+          a {
+            display: block;
+            font-size: 1.3em;
+          }
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &.is-current {
+            background-color: #dedede;
+
+            a {
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+
+    .current-swagifact {
+      flex: 1 1 75%;
+    }
+  }
+}
