@@ -11,11 +11,19 @@
     {!! get_search_form(false) !!}
   @endif
 
+  <div class="swagtracks">
+    @foreach ($child_tracks as $swagtrack)
+      @include('partials.content-swagtrack')
+    @endforeach
+  </div>
+
+  @if(sizeof($child_tracks) === 0)
   <div class="swagpaths">
     @while (have_posts()) @php(the_post())
       @include('partials.content-'.get_post_type())
     @endwhile
   </div>
+  @endif
 
   {!! get_the_posts_navigation() !!}
 @endsection

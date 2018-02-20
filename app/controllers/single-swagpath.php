@@ -8,13 +8,6 @@ class SingleSwagpath extends Controller
 {
     use Partials\Swagifacts;
 
-    function __construct() {
-      if (!get_query_var('swagifact')) {
-        $swagifacts = self::get_swagpath_swagifacts();
-        set_query_var( 'swagifact', $swagifacts[0]->slug );
-      }
-    }
-
     public function current_swagifact() {
       $slug = get_query_var('swagifact');
       if (!$slug) {

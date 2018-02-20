@@ -7,6 +7,6 @@ use Sober\Controller\Controller;
 class TemplateSwagtracks extends Controller
 {
   function tracks() {
-    return get_terms(array( "taxonomy" => 'swagtrack'));
+    return get_terms(array( "taxonomy" => 'swagtrack', "parent" => 0 ));
   }
 }
