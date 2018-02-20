@@ -68,3 +68,40 @@ add_filter('comments_template', function ($comments_template) {
     );
     return template_path(locate_template(["views/{$comments_template}", $comments_template]) ?: $comments_template);
 });
+
+add_filter('post_type_link', function ($permalink, $post) {
+    if ($post->post_type === 'swagpath') {
+        $terms = get_the_terms($post, 'swagtrack');
+
+        return site_url(sprintf("/swagtrack/%s/%s/", $terms[0]->slug, $post->post_name));
+    }
+    return $permalink;
+}, 99, 2);
+
+add_filter('query_vars', function ($vars) {
+    $vars[] = 'swagifact';
+    $vars[] = 'issuee';
+    $vars[] = 'badge';
+    $vars[] = 'json';
+
+    return $vars;
+});
+
+add_filter('body_class', function ($classes) {
+    if (get_query_var('issuee') && get_query_var('badge')) {
+        unset($classes['index-data']);
+        unset($classes['home-data']);
+        array_push($classes, 'single-badge-for-user-data');
+    }
+    return $classes;
+}, 99);
+
+add_filter('template_include', function ($template) {
+    if (get_query_var('issuee') && get_query_var('badge')) {
+        if (get_query_var('json')) {
+            return locate_template(["views/single-badge-for-user-json"]);
+        }
+        return locate_template(["views/single-badge-for-user"]);
+    }
+    return $template;
+}, 99);

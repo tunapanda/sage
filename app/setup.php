@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Roots\Sage\Container;
 use Roots\Sage\Assets\JsonManifest;
+use Roots\Sage\Container;
 use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
 
@@ -40,7 +40,7 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage')
+        'primary_navigation' => __('Primary Navigation', 'sage'),
     ]);
 
     /**
@@ -74,17 +74,17 @@ add_action('after_setup_theme', function () {
 add_action('widgets_init', function () {
     $config = [
         'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h3>',
-        'after_title'   => '</h3>'
+        'after_widget' => '</section>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
     ];
     register_sidebar([
-        'name'          => __('Primary', 'sage'),
-        'id'            => 'sidebar-primary'
+        'name' => __('Primary', 'sage'),
+        'id' => 'sidebar-primary',
     ] + $config);
     register_sidebar([
-        'name'          => __('Footer', 'sage'),
-        'id'            => 'sidebar-footer'
+        'name' => __('Footer', 'sage'),
+        'id' => 'sidebar-footer',
     ] + $config);
 });
 
@@ -125,4 +125,55 @@ add_action('after_setup_theme', function () {
     sage('blade')->compiler()->directive('asset', function ($asset) {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
+});
+
+add_action('init', function () {
+    add_rewrite_rule('^swagtrack\/[0-9a-z\-]+\/([0-9a-z\-]+)\/?$', 'index.php?post_type=swagpath&name=$matches[1]', 'top');
+    add_rewrite_rule('^swagtrack\/[0-9a-z\-]+\/([0-9a-z\-]+)\/([0-9a-z\-]+)\/?$', 'index.php?post_type=swagpath&name=$matches[1]&swagifact=$matches[2]', 'top');
+
+    add_rewrite_tag('%badge_slug%', '([[0-9a-z\-]+)', 'badge=');
+    add_rewrite_tag('%issuee_slug%', '([[0-9a-z\-]+)', 'issuee=');
+
+    add_permastruct('badge_assertion', '/author/%issuee_slug%/badge/%badge_slug%', false);
+});
+
+add_action('rest_api_init', function() {
+    register_rest_route('swag/v1', '/badge/assertion/(?P<issuee>[[0-9a-z\-]+)/badge/(?P<badge>[[0-9a-z\-]+)', array(
+        'methods' => \WP_REST_Server::READABLE,
+        'callback' => function ($args) {
+            global $post;
+
+            query_posts(array(
+                "name" => $args['badge'],
+                "post_type" => "badge",
+            ));
+
+            the_post();
+
+            $issuee = get_user_by('slug', $args['issuee']);
+
+            $controller = new \App\Controllers\SingleBadgeForUser();
+
+            $salt = bin2hex(random_bytes(10));
+            $json = array(
+                "@context" => "https://w3id.org/openbadges/v2",
+                "description" => $post->post_content,
+                "type" => "Assertion",
+                "id" => get_author_posts_url($issuee->ID) . 'badge/' . $post->post_name,
+                "badge" => get_permalink($post),
+                "image" => array_values(rwmb_meta('badge_image', array("size" => "large"), $post->ID))[0]['url'],
+                "verification" => array(
+                    "type" => "HostedBadge",
+                ),
+                "issuedOn" => $controller->assertion_statement($args['issuee'])['timestamp'],
+                "recipient" => array(
+                    "type" => "email",
+                    "hashed" => true,
+                    "salt" => $salt,
+                    "identity" => "sha256$" . hash('sha256', $issuee->user_email + $salt),
+                ),
+            );
+            return $json;
+        }
+    ));
 });
