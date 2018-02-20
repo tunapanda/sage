@@ -20,6 +20,19 @@
   @include make-col(6);
 }
 
+.breadcrumbs {
+  margin: 1em 0;
+
+  a {
+    padding: 1em;
+    color: #999;
+  }
+
+  a:last-child {
+    color: #1c4255;
+  }
+}
+
 .nav-primary .nav {
   display: flex;
 
@@ -33,18 +46,5 @@
     &.current_page_item a {
       color: #444;
     }
-  }
-}
-
-.breadcrumbs {
-  margin: 1em 0;
-
-  a {
-    padding: 1em;
-    color: #999;
-  }
-
-  a:last-child {
-    color: #1c4255;
   }
 }
