@@ -34,9 +34,9 @@ trait Swagifacts
     $swag = \SwagPostItem::create('h5p', $slug);
     $swag->setSwagPost($path);
 
+    $row = $wpdb->get_row($q, ARRAY_A);
     $row['is_completed'] = $swag->isCompleted(\SwagUser::getCurrent());
 
-    $row = $wpdb->get_row($q, ARRAY_A);
     return $row;
   }
 

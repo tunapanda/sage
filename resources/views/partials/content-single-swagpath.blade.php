@@ -7,9 +7,13 @@
     <div class="swagifacts">
       <ul>
         @foreach(SingleSwagpath::get_swagpath_swagifacts() as $swagifact)
-          <li class="swagpath-swagifact {{ $swagifact['slug'] === $current_swagifact ? 'is-current' : '' }}">
-           <a href="{{ SingleSwagpath::get_swagifact_permalink($swagifact['slug'], $post) }}">Section {{ $loop->iteration }}</a>
-           <div class="section-name">{{ $swagifact['title'] }}</div>
+          <li class="swagpath-swagifact {{ $swagifact['slug'] === $current_swagifact ? 'is-current' : '' }} {{ $swagifact['is_completed'] ? 'is-complete' : '' }}">
+            <a href="{{ SingleSwagpath::get_swagifact_permalink($swagifact['slug'], $post) }}">
+            @if($swagifact['is_completed'])
+              <i class="fas fa-check-circle"></i>
+            @endif
+            Section {{ $loop->iteration }}</a>
+            <div class="section-name">{{ $swagifact['title'] }}</div>
           </li>
         @endforeach
       </ul>
