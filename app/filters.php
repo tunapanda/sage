@@ -72,8 +72,9 @@ add_filter('comments_template', function ($comments_template) {
 add_filter('post_type_link', function ($permalink, $post) {
     if ($post->post_type === 'swagpath') {
         $terms = get_the_terms($post, 'swagtrack');
-
-        return site_url(sprintf("/swagtrack/%s/%s/", $terms[0]->slug, $post->post_name));
+        if ($terms) {
+            return site_url(sprintf("/swagtrack/%s/%s/", $terms[0]->slug, $post->post_name));
+        }
     }
     return $permalink;
 }, 99, 2);
