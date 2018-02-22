@@ -1,0 +1,104 @@
+
+.template-homepage {
+  .homepage-hero {
+    background-color: transparent;
+    color: rgb(107, 107, 107);
+  }
+
+  .content {
+    margin-bottom: 6em;
+  }
+}
+
+.homepage-get-started {
+  min-height: 400px;
+}
+
+.homepage-get-started-desc {
+  @include make-col(6.5);
+
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/46714028-african-american-student-girls-using-a-laptop-computer---black-people-Stock-Photo.jpg');
+  background-size: cover;
+  font-size: 2em;
+  color: #fff;
+
+  p {
+    padding: 2em;
+    padding-top: 6em;
+  }
+}
+
+.homepage-get-started-link {
+  @include make-col(5.5);
+
+  background-color: #0b4425;
+  background-image: url('../images/swag-graphic.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-top: 20%;
+  padding-left: 1em;
+  color: #ff9e00;
+  font-weight: 500;
+}
+
+.homepage-video-container {
+  @include make-row();
+
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.homepage-video {
+  @include make-col(12);
+
+  min-height: 400px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.homepage-unique {
+  font-size: 1.8em;
+  color: #106a38;
+}
+
+.swag-full-desc {
+  color: #808080;
+}
+
+.homepage-description {
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+.swag-key-point {
+  font-size: 1.8em;
+  color: #106a38;
+  text-align: center;
+
+  .keypoint-text {
+    margin-top: 1em;
+  }
+}
+
+.homepage-get-started,
+.homepage-description,
+.swag-key-points {
+  @include make-row();
+
+  .homepage-unique,
+  .swag-full-desc {
+    @include make-col(6);
+  }
+
+  // .homepage-get-started-desc {
+  //   flex-grow: 1;
+  //   max-width: 100%;
+  // }
+
+  // .homepage-get-started-link {
+  //   flex: 0 0 400px;
+  // }
+
+  .swag-key-point {
+    @include make-col(3);
+  }
+}
