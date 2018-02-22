@@ -11028,7 +11028,7 @@ body#tinymce {
   padding: 1em;
 }
 
-.tempalte-swagtracks .swagtracks,
+.template-swagtracks .swagtracks,
 .tax-swagtrack .swagtracks {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11040,7 +11040,7 @@ body#tinymce {
           justify-content: space-between;
 }
 
-.tempalte-swagtracks .swagtracks .swagtrack,
+.template-swagtracks .swagtracks .swagtrack,
 .tax-swagtrack .swagtracks .swagtrack {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 32%;
@@ -11052,12 +11052,12 @@ body#tinymce {
   margin: 1em 0;
 }
 
-.tempalte-swagtracks .swagtracks .swagtrack .entry-title a,
+.template-swagtracks .swagtracks .swagtrack .entry-title a,
 .tax-swagtrack .swagtracks .swagtrack .entry-title a {
   color: #1e4254;
 }
 
-.tempalte-swagtracks .swagtracks .swagtrack .entry-summary,
+.template-swagtracks .swagtracks .swagtrack .entry-summary,
 .tax-swagtrack .swagtracks .swagtrack .entry-summary {
   color: #f6faef;
 }
