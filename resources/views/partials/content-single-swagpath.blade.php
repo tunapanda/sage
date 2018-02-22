@@ -19,7 +19,11 @@
       </ul>
     </div>
     <div class="current-swagifact">
+        @if($current_swagifact)
         {!! SingleSwagpath::do_swagifact($current_swagifact) !!}
+        @else
+        No swagifacts in path
+        @endif
     </div>
   </div>
   <footer>
