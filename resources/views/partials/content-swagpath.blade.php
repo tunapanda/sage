@@ -16,7 +16,7 @@
   <div class="swagpath-swagifacts">
     <ul>
       @foreach(rwmb_meta( 'swagifact' ) as $swagifact)
-        <li class="swagpath-swagifact">
+        <li class="swagpath-swagifact {{TaxonomySwagtrack::get_swagifact($swagifact)['is_completed'] ? 'completed' : ''}}">
         {{ TaxonomySwagtrack::get_swagifact($swagifact)['title'] }}
         </li>
       @endforeach

@@ -4,7 +4,11 @@
 @extends('layouts/app')
 
 @section('content')
-  @foreach($tracks as $swagtrack)
-    @include('partials.content-swagtrack')
-  @endforeach
+  @include('partials.tracks-header')
+
+  <div class="swagtracks">
+    @foreach($tracks as $swagtrack)
+      @include('partials.content-swagtrack')
+    @endforeach
+  </div>
 @endsection

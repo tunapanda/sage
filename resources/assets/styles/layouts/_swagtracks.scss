@@ -1,9 +1,35 @@
+.template-swagtracks,
+.archive.tax-swagtrack {
+  .header-container {
+    display: flex;
+  }
+
+  .page-header {
+    flex: 1 0 66%;
+    background-color: #e4dedd;
+    color: #1c4255;
+    min-height: 200px;
+
+    h1,
+    p {
+      padding: 1em;
+    }
+  }
+
+  .user-info {
+    flex: 0 1 33%;
+    background-color: #19703e;
+    color: #fff;
+    padding: 1em;
+  }
+}
+
 /**
   *  Index of swagtracks
   **/
 
 .template-swagtracks {
-  .main {
+  .swagtracks {
     display: flex;
   }
 
@@ -40,9 +66,14 @@
     }
   }
 
-  .swagtracks {
-    display: flex;
-  }
+  // .page-content {
+  //   display: flex;
+  // }
+
+  // .swagpaths {
+  //   flex: 1 1 66%;
+  //   display: flex;
+  // }
 
   article.swagtrack {
     flex: 1 1 33%;
@@ -63,6 +94,7 @@
 
   .swagpath {
     display: flex;
+    width: 100%;
     background-color: #e6e6e6;
     color: #1c4255;
     margin: 1em 0;
@@ -98,6 +130,13 @@
         margin: 1em;
         border-radius: 20px;
         overflow: hidden;
+
+        &.completed::before {
+          content: "\f00c";
+          display: none;
+          float: left;
+          font-family: 'Font Awesome 5 Solid', serif;
+        }
       }
     }
   }

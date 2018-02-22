@@ -28,6 +28,7 @@ const routes = new Router({
 jQuery(document).ready(() => routes.loadEvents());
 
 // Render Icons
+fontawesome.config.searchPseudoElements = true;
 fontawesome.library.add(solid);
 
 fontawesome.dom.i2svg();
