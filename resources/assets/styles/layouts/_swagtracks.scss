@@ -24,7 +24,8 @@
   }
 }
 
-.swagtracks {
+.tempalte-swagtracks .swagtracks,
+.tax-swagtrack .swagtracks {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
