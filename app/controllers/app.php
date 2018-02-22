@@ -84,11 +84,18 @@ class App extends Controller
                 );
             }
 
-            $breadcrumbs .= sprintf("> <a class=\"bread-track\" href=\"%s\">%s</a> > <a class=\"bread-path\">%s</a>",
-                get_term_link($terms[0]->term_id),
-                $terms[0]->name,
-                $post->post_title
-            );
+            if ($terms) {
+                $breadcrumbs .= sprintf("> <a class=\"bread-track\" href=\"%s\">%s</a> > <a class=\"bread-path\">%s</a>",
+                    get_term_link($terms[0]->term_id),
+                    $terms[0]->name,
+                    $post->post_title
+                );
+            } else {
+                $breadcrumbs .= sprintf("> <a class=\"bread-path\" href=\"%s\">%s</a>",
+                    get_permalink($post),
+                    $post->post_title
+                );
+            }
 
             return $breadcrumbs;
         }

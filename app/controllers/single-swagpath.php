@@ -12,7 +12,9 @@ class SingleSwagpath extends Controller
       $slug = get_query_var('swagifact');
       if (!$slug) {
           $swagifacts = self::get_swagpath_swagifacts();
-          return $swagifacts[0]['slug'];
+          if($swagifacts) {
+            return $swagifacts[0]['slug'];
+          }
       }
       return $slug;
 
