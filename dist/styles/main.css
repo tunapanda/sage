@@ -11028,11 +11028,7 @@ body#tinymce {
   padding: 1em;
 }
 
-/**
-  *  Index of swagtracks
-  **/
-
-.template-swagtracks .swagtracks {
+.swagtracks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11043,10 +11039,10 @@ body#tinymce {
           justify-content: space-between;
 }
 
-.template-swagtracks article.swagtrack {
+.swagtracks .swagtrack {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 30%;
-          flex: 0 0 30%;
+      -ms-flex: 0 0 32%;
+          flex: 0 0 32%;
   max-width: 32%;
   background: #8cc34b;
   min-height: 200px;
@@ -11054,13 +11050,17 @@ body#tinymce {
   margin: 1em 0;
 }
 
-.template-swagtracks article.swagtrack .entry-title a {
+.swagtracks .swagtrack .entry-title a {
   color: #1e4254;
 }
 
-.template-swagtracks article.swagtrack .entry-summary {
+.swagtracks .swagtrack .entry-summary {
   color: #f6faef;
 }
+
+/**
+  *  Index of swagtracks
+  **/
 
 /**
   *  Signle Swagtrack page (taxonomy archive)
@@ -11074,25 +11074,6 @@ body#tinymce {
 
 .archive.tax-swagtrack .page-header h1 {
   padding: 1em;
-}
-
-.archive.tax-swagtrack article.swagtrack {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 33%;
-          flex: 0 0 33%;
-  max-width: 33%;
-  background: #8cc34b;
-  min-height: 160px;
-  padding: 1em;
-  margin: 1em;
-}
-
-.archive.tax-swagtrack article.swagtrack .entry-title a {
-  color: #1e4254;
-}
-
-.archive.tax-swagtrack article.swagtrack .entry-summary {
-  color: #f6faef;
 }
 
 .archive.tax-swagtrack .swagpath {
