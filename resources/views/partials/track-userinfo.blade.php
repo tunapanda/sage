@@ -3,11 +3,11 @@
   <tbody>
     <tr>
       <td>Paths in progress</td>
-      <td>0</td>
+      <td>{{ sizeof($current_user_attempted_swag) }}</td>
     </tr>
       <tr>
       <td>Paths completed</td>
-      <td>1</td>
+      <td>{{ sizeof($current_user_completed_swag) }}</td>
     </tr>
     </tbody>
 </table>
