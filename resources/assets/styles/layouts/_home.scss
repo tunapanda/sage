@@ -37,8 +37,11 @@
   background-repeat: no-repeat;
   padding-top: 20%;
   padding-left: 1em;
-  color: #ff9e00;
-  font-weight: 500;
+
+  a {
+    color: #ff9e00;
+    font-weight: 500;
+  }
 }
 
 .homepage-video-container {

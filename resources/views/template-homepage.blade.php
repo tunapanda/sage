@@ -14,7 +14,7 @@
       <p>Swag is to school books what Wikipedia is to encyclopedias</p>
     </div>
     <div class="homepage-get-started-link">
-      Get started <i class="fas fa-angle-right"></i>
+      <a href="/swagmap/">Get started <i class="fas fa-angle-right"></i></a>
     </div>
   </div>
    <div class="homepage-video-container">

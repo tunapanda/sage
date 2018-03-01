@@ -10990,6 +10990,51 @@ body {
   min-height: 150px;
 }
 
+/**
+  * My Account
+  */
+
+.my-account-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #dedede;
+}
+
+.my-account-content .my-account-image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60%;
+          flex: 0 0 60%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(/wp-content/themes/swag/dist/images/46714028-african-american-student-girls-using-a-laptop-computer---black-people-Stock-Photo.jpg);
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/wp-content/themes/swag/dist/images/46714028-african-american-student-girls-using-a-laptop-computer---black-people-Stock-Photo.jpg);
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/wp-content/themes/swag/dist/images/46714028-african-american-student-girls-using-a-laptop-computer---black-people-Stock-Photo.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/wp-content/themes/swag/dist/images/46714028-african-american-student-girls-using-a-laptop-computer---black-people-Stock-Photo.jpg);
+  background-size: cover;
+  font-size: 2em;
+  color: #fff;
+}
+
+.my-account-content .my-account-image p {
+  padding: 2em;
+  padding-top: 6em;
+}
+
+.my-account-content .my-account-form {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+}
+
+.my-account-content .my-account-form .tab-pane {
+  padding: 2em 4em;
+}
+
+.profile-username {
+  font-size: 3em;
+  font-weight: bold;
+  color: #1c4255;
+}
+
 body#tinymce {
   margin: 12px !important;
 }
@@ -11222,10 +11267,10 @@ body#tinymce {
       -ms-flex: 0 0 54.16667%;
           flex: 0 0 54.16667%;
   max-width: 54.16667%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(/wp-content/themes/wp-swag-theme/dist/images/46714028-african-american-student-girls-using-a-laptop-computer---black-people-Stock-Photo.jpg);
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/wp-content/themes/wp-swag-theme/dist/images/46714028-african-american-student-girls-using-a-laptop-computer---black-people-Stock-Photo.jpg);
-  background: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/wp-content/themes/wp-swag-theme/dist/images/46714028-african-american-student-girls-using-a-laptop-computer---black-people-Stock-Photo.jpg);
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/wp-content/themes/wp-swag-theme/dist/images/46714028-african-american-student-girls-using-a-laptop-computer---black-people-Stock-Photo.jpg);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(/wp-content/themes/swag/dist/images/46714028-african-american-student-girls-using-a-laptop-computer---black-people-Stock-Photo.jpg);
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/wp-content/themes/swag/dist/images/46714028-african-american-student-girls-using-a-laptop-computer---black-people-Stock-Photo.jpg);
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/wp-content/themes/swag/dist/images/46714028-african-american-student-girls-using-a-laptop-computer---black-people-Stock-Photo.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/wp-content/themes/swag/dist/images/46714028-african-american-student-girls-using-a-laptop-computer---black-people-Stock-Photo.jpg);
   background-size: cover;
   font-size: 2em;
   color: #fff;
@@ -11242,11 +11287,14 @@ body#tinymce {
           flex: 0 0 45.83333%;
   max-width: 45.83333%;
   background-color: #0b4425;
-  background-image: url(/wp-content/themes/wp-swag-theme/dist/images/swag-graphic.png);
+  background-image: url(/wp-content/themes/swag/dist/images/swag-graphic.png);
   background-size: contain;
   background-repeat: no-repeat;
   padding-top: 20%;
   padding-left: 1em;
+}
+
+.homepage-get-started-link a {
   color: #ff9e00;
   font-weight: 500;
 }
