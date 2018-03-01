@@ -5,8 +5,7 @@
 
 @section('content')
   @if(is_user_logged_in())
-    <a href="{{ wp_logout_url() }}"> Log Out</a>
-    {!! do_shortcode('[my-swag]') !!}
+    @include('partials/my-swag')
   @else
   <div class="page-header">
   <h1>Sign Up / Login</h1>
