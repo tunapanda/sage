@@ -1,4 +1,5 @@
 <h2>My Progress</h2>
+@if(is_user_logged_in())
 <table class="table">
   <tbody>
     <tr>
@@ -11,3 +12,8 @@
     </tr>
     </tbody>
 </table>
+@else
+<div>Sign Up/Login to view or save your progress</div>
+<a href="/my-account/" class="btn btn-primary">Sign Up</a>
+
+@endif
