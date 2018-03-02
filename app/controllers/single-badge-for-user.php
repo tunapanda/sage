@@ -18,7 +18,11 @@ class SingleBadgeForUser extends Controller
   }
 
   public function image_url() {
-    return array_values(rwmb_meta('badge_image', array('size' => 'large' )))[0]['url'];
+    $settings = get_option('open_badges_issuer');
+
+    $images = rwmb_meta('badge_image', array("size" => "large"));
+
+    return sizeof($images) > 0 ? $images[0] : $settings['default_badge_image'];
   }
 
   public function assertion_statement($slug = null) {

@@ -155,13 +155,20 @@ add_action('rest_api_init', function() {
             $controller = new \App\Controllers\SingleBadgeForUser();
 
             $salt = bin2hex(random_bytes(10));
+
+            $settings = get_option('open_badges_issuer');
+
+            $images = rwmb_meta('badge_image', array("size" => "large"));
+
+            $image_url = sizeof($images) > 0 ? $images[0] : $settings['default_badge_image'];
+
             $json = array(
                 "@context" => "https://w3id.org/openbadges/v2",
                 "description" => $post->post_content,
                 "type" => "Assertion",
                 "id" => get_author_posts_url($issuee->ID) . 'badge/' . $post->post_name,
                 "badge" => get_permalink($post),
-                "image" => array_values(rwmb_meta('badge_image', array("size" => "large"), $post->ID))[0]['url'],
+                "image" => $image_url,
                 "verification" => array(
                     "type" => "HostedBadge",
                 ),
