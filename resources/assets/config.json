@@ -8,7 +8,7 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/wp-content/themes/swag",
+  "publicPath": "/wp-content/themes/wp-swag-theme",
   "devUrl": "http://172.28.128.4",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
