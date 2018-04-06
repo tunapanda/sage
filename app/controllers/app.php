@@ -105,4 +105,14 @@ class App extends Controller
             return $breadcrumbs;
         }
     }
+
+    public static function homepage_video() {
+       $theme_options = get_option('theme_options');
+       $video_src = "";
+
+       if(isset($theme_options['homepage_video'])) {
+           $video_src = $theme_options['homepage_video'];
+       }
+        return do_shortcode("[video width=\"1140\" height=\"600\" preload=\"auto\" src=\"$video_src\"]");
+    }
 }

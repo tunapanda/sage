@@ -18,7 +18,9 @@
     </div>
   </div>
    <div class="homepage-video-container">
-    <div class="homepage-video">video</div>
+    <div class="homepage-video">
+    {!! App::homepage_video() !!}
+    </div>
     </div>
     <div class="homepage-description">
       <div class="homepage-unique">
